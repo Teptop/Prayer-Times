@@ -149,6 +149,9 @@ export default function MainContent() {
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
+        '@media (max-width: 600px)': { // يتم تفعيل هذا الشرط فقط في الشاشات الصغيرة
+          marginRight: "10rem",
+        }
       }}
       marginTop={{
         xs:3,
@@ -159,7 +162,7 @@ export default function MainContent() {
 
         <Grid
         size={{
-           xs: 5, // 0
+           xs: 12, // 0
             sm: 6, // 600 
             md: 6, // 900
             lg: 6, // 1200
@@ -183,19 +186,22 @@ export default function MainContent() {
             variant="h2"
             color="white"
             sx={{
+              fontWeight:"400",
               fontSize:{
                 xs: '2rem', // Small screens (xs)
                 sm: '3rem', // Small to medium screens (sm)
                 md: '4rem', // Medium screens (md)
                 lg: '5rem', // Large screens (lg)
-                xl: '6rem', // Extra large screens (xl)
+                xl: '5rem', // Extra large screens (xl)
               }
             }}
             >{selectedCity.displayName}</Typography>
           </div>
         </Grid>
-        <Grid size={{
-           xs: 3, // 0
+        <Grid 
+        // sx={{background:"red"}}
+        size={{
+           xs: 12, // 0
             sm: 6, // 600 
             md: 6, // 900
             lg: 6, // 1200
@@ -219,12 +225,13 @@ export default function MainContent() {
             color="white"
              variant="h2"
              sx={{
+              fontWeight:"400",
                fontSize:{
                  xs: '2rem', // Small screens (xs)
                  sm: '3rem', // Small to medium screens (sm)
                  md: '4rem', // Medium screens (md)
                  lg: '5rem', // Large screens (lg)
-                 xl: '6rem', // Extra large screens (xl)
+                 xl: '5rem', // Extra large screens (xl)
                }
              }}
             >{prayerArray[nextPrayerIndex].displayName}</Typography>
@@ -293,7 +300,15 @@ export default function MainContent() {
         direction="row"
         justifyContent={"center"}
       >
-        <FormControl style={{ width: "20%" }}>
+        <FormControl 
+         sx={{
+          width: {
+            xs: "45%",   // في شاشات الجوال (صغيرة) عرض العنصر سيكون 90% من العرض
+            sm: "20%",   // في الشاشات المتوسطة (مثل الأجهزة اللوحية) العرض سيكون 50%
+            md: "20%",   // في الشاشات الكبيرة العرض سيكون 20% كما هو في الكود الأصلي
+          },
+        }}
+        >
           <InputLabel id="demo-simple-select-label">
             <span style={{ color: "white" }}>مكة المكرمة</span>
           </InputLabel>
