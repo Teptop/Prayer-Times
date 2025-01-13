@@ -20,7 +20,7 @@ export default function MainContent() {
 
   const theme = createTheme({
     typography: {
-      fontFamily: 'IBM Plex Sans Arabic, sans-serif', // Set your custom font here
+      fontFamily: 'IBM Plex Sans Arabic, sans-serif',// Set your custom font here
     },
   });
   
