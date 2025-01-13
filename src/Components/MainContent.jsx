@@ -168,6 +168,7 @@ export default function MainContent() {
           <div>
             <Typography
              variant="h5"
+             color="white"
              sx={{
                fontSize:{
                  xs: '1rem', // Small screens (xs)
@@ -180,6 +181,7 @@ export default function MainContent() {
             >{today}</Typography>
             <Typography 
             variant="h2"
+            color="white"
             sx={{
               fontSize:{
                 xs: '2rem', // Small screens (xs)
@@ -202,6 +204,7 @@ export default function MainContent() {
           <div>
             <Typography
               variant="h5"
+              color="white"
               sx={{
                 fontSize:{
                   xs: '1rem', // Small screens (xs)
@@ -213,6 +216,7 @@ export default function MainContent() {
               }}
             >الصلاة القادمة :</Typography>
             <Typography
+            color="white"
              variant="h2"
              sx={{
                fontSize:{
