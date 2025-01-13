@@ -150,7 +150,7 @@ export default function MainContent() {
         justifyContent:"center",
         alignItems:"center",
         '@media (max-width: 600px)': { // يتم تفعيل هذا الشرط فقط في الشاشات الصغيرة
-          marginRight: "10rem",
+          
         }
       }}
       marginTop={{
@@ -162,7 +162,7 @@ export default function MainContent() {
 
         <Grid
         size={{
-           xs: 12, // 0
+           xs: 5, // 0
             sm: 6, // 600 
             md: 6, // 900
             lg: 6, // 1200
@@ -201,7 +201,7 @@ export default function MainContent() {
         <Grid 
         // sx={{background:"red"}}
         size={{
-           xs: 12, // 0
+           xs: 4, // 0
             sm: 6, // 600 
             md: 6, // 900
             lg: 6, // 1200
