@@ -63,11 +63,11 @@ export default function MainContent() {
   ];
 
   const prayerArray = [
-    {key:'Fajr', displayName:'الفجر'},
-    {key:'Dhuhr', displayName:'الضهر'},
-    {key:'Asr', displayName:'العصر'},
-    {key:'Sunset', displayName:'المغرب'},
-    {key:'Isha', displayName:'العشاء'},
+    {key:'Fajr', displayName:'الفجر',image: "https://img.freepik.com/premium-photo/muslim-boy-praying_985554-65.jpg"},
+    {key:'Dhuhr', displayName:'الضهر',image: "https://img.freepik.com/premium-photo/muslim-man-sitting-mosque-praying_1168824-115.jpg"},
+    {key:'Asr', displayName:'العصر',image: "https://t3.ftcdn.net/jpg/06/27/96/34/360_F_627963473_34DZRIGxfiXOJY07tY1hpesT4Dg0CwRZ.jpg"},
+    {key:'Sunset', displayName:'المغرب',image: "https://imengine.public.prod.rgb.navigacloud.com/?uuid=8ce4e765-79a9-54d0-bdf5-aeeeb2a8fdfe&type=primary&function=cover&source=false&width=800"},
+    {key:'Isha', displayName:'العشاء',image: "https://img.freepik.com/premium-photo/muslim-man-sitting-while-raised-hands-praying_1024356-1776.jpg?w=360"},
   ];
 
   const getTimings = async () => {
@@ -244,56 +244,22 @@ export default function MainContent() {
 
       <Divider style={{ marginTop:"2rem",borderColor: "white", opacity: "0.1" }} />
 
-        <Grid 
-         container
-         columnGap={{xs:2,sm:3,lg:3,md:3}}
-         rowGap={{xs:4,sm:5}}
-         spacing={{xs:3,sm:2,md:3,lg:0}}  
-         display="flex"
-         justifyContent="center"
-         alignItems='center'
-         style={{marginTop: "50px"}}>
-        
-          
-          <Grid style={{display:'flex',justifyContent:'center'}}  size={{ xs:12, sm:2, md:2, lg:2, xl:2}}>
-        <Prayers
-          name="الفجر"
-          time={timings.Fajr}
-          image="https://cdn.pixabay.com/photo/2024/03/09/13/24/prayer-8622629_1280.jpg"
-        />
-         </Grid>
-         <Grid style={{display:'flex',justifyContent:'center'}}  size={{ xs: 12, sm:2, md:2, lg:2, xl:2}}>
-        <Prayers
-          name="الضهر"
-          time={timings.Dhuhr}
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0vRif9-W20IC2keU-vsuS1mHedBvF-2jqxyy6AtF0hfXZRchs4VEU0pVE8IqZzl44UTk&usqp=CAU"
-        />
-         </Grid>
-
-         <Grid style={{display:'flex',justifyContent:'center'}}  size={{ xs: 12, sm:2, md:2, lg:2, xl:2}}>
-        <Prayers
-          name="العصر"
-          time={timings.Asr}
-          image="https://cdn.pixabay.com/photo/2024/05/29/23/45/praying-8797403_640.jpg"
-        />
+      <Grid
+      container
+      columnGap={{ xs: 2, sm: 3, lg: 3, md: 3 }}
+      rowGap={{ xs: 4, sm: 5 }}
+      spacing={{ xs: 3, sm: 2, md: 3, lg: 0 }}
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      style={{ marginTop: "50px" }}
+    >
+      {prayerArray.map((prayer) => (
+        <Grid key={prayer.key} style={{ display: "flex", justifyContent: "center" }} size={{ xs: 12, sm: 2, md: 2, lg: 2, xl: 2 }}>
+          <Prayers name={prayer.displayName} time={timings[prayer.key]} image={prayer.image} />
         </Grid>
-
-         <Grid style={{display:'flex',justifyContent:'center'}}  size={{ xs: 12, sm:2, md:2, lg:2, xl:2}}>
-        <Prayers
-          name="المغرب"
-          time={timings.Sunset}
-          image="https://img.freepik.com/premium-photo/muslim-man-sitting-holding-quran-with-view-mosque-eid-ul-adha-mubarak-day-background-illustration-generative-ai-illustration_993599-2241.jpg"
-        />
-        </Grid>
-
-         <Grid style={{display:'flex',justifyContent:'center'}}  size={{ xs: 12, sm:2, md:2, lg:2, xl:2}}>
-        <Prayers
-          name="العشاء"
-          time={timings.Isha}
-          image="https://img.freepik.com/free-photo/teenage-girl-with-praying-sunny-nature_1150-7219.jpg?semt=ais_hybrid"
-        />
-        </Grid>
-        </Grid>
+      ))}
+    </Grid>
 
       <Stack
         sx={{marginTop:6,marginBottom:{xs:5}}}
