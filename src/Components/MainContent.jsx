@@ -57,8 +57,8 @@ export default function MainContent() {
       apiName: "Al Madīnah al Munawwarah",
     },
     {
-      displayName: "القصيم",
-      apiName: "Al Qaşīm",
+      displayName: "تبوك",
+      apiName: "Tabūk",
     },
   ];
 
