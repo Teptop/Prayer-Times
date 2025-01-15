@@ -36,8 +36,8 @@ export default function MainContent() {
   });
 
   const [selectedCity, setSelectedCity] = useState({
-    displayName: "مكة المكرمة",
-    apiName: "Makkah al Mukarramah",
+    displayName: "الرياض",
+    apiName: "Ar Riyāḑ",
   });
 
   const [today, setToday] = useState("");
@@ -45,12 +45,12 @@ export default function MainContent() {
 
   const avilableCity = [
     {
-      displayName: "مكة المكرمة",
-      apiName: "Makkah al Mukarramah",
-    },
-    {
       displayName: "الرياض",
       apiName: "Ar Riyāḑ",
+    },
+    {
+      displayName: "مكة المكرمة",
+      apiName: "Makkah al Mukarramah",
     },
     {
       displayName: "المدينة",
@@ -276,7 +276,7 @@ export default function MainContent() {
         }}
         >
           <InputLabel id="demo-simple-select-label">
-            <span style={{ color: "white" }}>مكة المكرمة</span>
+            <span style={{ color: "white" }}> الرياض</span>
           </InputLabel>
           <Select
             style={{ color: "white" }}
